@@ -1,0 +1,72 @@
+
+
+
+     <!-- ======= Login ======= -->
+
+    <div class="login-page bg-light">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-10 offset-lg-1">
+
+                <h3 class="mb-3">Login Now</h3>
+                  <div class="bg-white shadow rounded">
+                      <div class="row">
+                          <div class="col-md-7 pe-0">
+                              <div class="form-left h-100 py-5 px-5">
+                                <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)">
+                                  <div class="col-12">
+                                    <div class="input-group mb-3">
+                                      <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                      </div>
+                                      <input type="text" class="form-control" name="username" placeholder="Username" ngModel
+                                      #usernameInput="ngModel" required>
+                                    </div>
+                                    <span class="help-block" style="color:red;"
+                                    *ngIf="usernameInput.invalid && usernameInput.touched">Please enter a username</span>
+                                    <div class="input-group mb-2">
+                                      <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                      </div>
+                                      <input type="password" class="form-control" name="password" placeholder="Password"
+                                      ngModel
+                                      #passwordInput="ngModel" required>
+                                    </div>
+
+                                          <div class="mt-4">
+                                            <div class="d-flex justify-content-center links">
+                                              Don't have an account? <a routerLink="/register" class="ml-2" style="color: #2C3E50;">Sign Up</a>
+                                            </div>
+                                            <br>
+                                            <button type="submit" [disabled]="loginForm.invalid || showLoading" name="button" class="btn login_btn">
+                                              <i *ngIf="showLoading" class="fas fa-spinner fa-spin"></i>&nbsp;&nbsp;
+                                              <span *ngIf="showLoading">Loading...</span>
+                                              <span *ngIf="!showLoading">Login</span>
+                                            </button>
+                                          </div>
+                                  </div>
+                                  </form>
+                              </div>
+                          </div>
+                          <div class="col-md-5 ps-0 d-none d-md-block">
+                              <div class="form-right h-100 text-white text-center pt-5">
+                                  <i class="bi bi-bootstrap"></i>
+                                  <h2 class="fs-1">Welcome Back to Ecode!!!</h2>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+      <!-- ======= end Login ======= -->
+
+
+
+
+
+
+
+
